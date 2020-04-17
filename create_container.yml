@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  tasks:
+  - name: web container
+    docker_container:
+       name: web
+       image: webimage
+       state: started
+       ports: 
+       - "8081: 80"
+       tty: true
+       detach: true
